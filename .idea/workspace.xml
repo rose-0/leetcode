@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/leecode/other/LRU缓存机制_146.java" line="26" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="885129ae-21d3-42b8-a1a5-1dac186707a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="885129ae-21d3-42b8-a1a5-1dac186707a0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -372,7 +370,7 @@
       <workItem from="1594430352731" duration="49443000" />
       <workItem from="1594733159280" duration="69289000" />
       <workItem from="1595126149928" duration="115460000" />
-      <workItem from="1596417655624" duration="13407000" />
+      <workItem from="1596417655624" duration="13712000" />
     </task>
     <task id="LOCAL-00001" summary="new project">
       <created>1596596048700</created>
@@ -385,7 +383,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1582450000" />
+    <option name="totallyTimeSpent" value="1582755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
