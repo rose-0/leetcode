@@ -71,8 +71,12 @@ public class 反转链表II_92 {
             每次把reverHead的next节点插到pre的后面
             先连后断
             next先和pre.next连上 即next.next=pre.next;
+
+            reverHead始终指向2，第一次把2后面的3移到1后面   1 3 2 4 5 （pre始终指向1）
+                               第二次把2后面的4移到1后面   1 4 3 2 5
              */
-            ListNode next=reverHead.next;//next为3
+            System.out.println("i="+i+" "+"reverseBetween2"+reverHead.val+"next"+reverHead.next.val);
+            ListNode next=reverHead.next;//next为3,
             reverHead.next=next.next;//2指向4
 
             //下面这两个不能颠倒 先连后断
@@ -89,7 +93,7 @@ public class 反转链表II_92 {
         head1.next.next.next.next = new ListNode(5);
 //        head1.next.next.next.next.next = new ListNode(11);
 //        head1.next.next.next.next.next.next = new ListNode(13);
-        reverseBetween(head1,2,4);
+        reverseBetween2(head1,2,4);
         while (head1!=null){
             System.out.print(head1.val+" ");
             head1=head1.next;
