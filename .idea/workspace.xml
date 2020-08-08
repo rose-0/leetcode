@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/leecode/other/LRU缓存机制_146.java" line="26" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="885129ae-21d3-42b8-a1a5-1dac186707a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/leecode/dfs/完全二叉树的节点个数_222.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leecode/dfs/完全二叉树的节点个数_222.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leecode/dfs/翻转二叉树_226.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leecode/dfs/翻转二叉树_226.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/leecode/dfs/路径总和II_113.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leecode/dfs/路径总和II_113.java" afterDir="false" />
-    </list>
+    <list default="true" id="885129ae-21d3-42b8-a1a5-1dac186707a0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,11 +88,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/leecode/dfs/完全二叉树的节点个数_222.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="198">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/剑指offer/二叉搜索树与双向链表_36.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <folding>
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#232#233#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/笔试代码/实战/Bitmap.java" />
         <option value="$PROJECT_DIR$/src/leecode/dfs/二叉树的后序遍历_145.java" />
         <option value="$PROJECT_DIR$/src/leecode/Array/两个数组的交集_349.java" />
         <option value="$PROJECT_DIR$/src/leecode/Array/三数之和_15.java" />
@@ -243,6 +251,7 @@
         <option value="$PROJECT_DIR$/src/leecode/dfs/翻转二叉树_226.java" />
         <option value="$PROJECT_DIR$/src/leecode/dfs/路径总和II_113.java" />
         <option value="$PROJECT_DIR$/src/leecode/dfs/完全二叉树的节点个数_222.java" />
+        <option value="$PROJECT_DIR$/src/剑指offer/二叉搜索树与双向链表_36.java" />
       </list>
     </option>
   </component>
@@ -295,19 +304,6 @@
               <item name="leetcode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="BIO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="leecode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="leecode" type="462c0819:PsiDirectoryNode" />
-              <item name="dfs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
@@ -553,13 +549,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1596034000" />
+    <option name="totallyTimeSpent" value="1597289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1792" height="1120" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.21142857" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.21142857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -580,7 +576,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.294702" />
       <window_info anchor="bottom" id="Run with VisualVM" order="12" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="14" visible="true" weight="0.19142857" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="14" visible="true" weight="0.2657143" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -675,13 +671,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/zuoshen/输入输出练习/D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/zuoshen/输入输出练习/G.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1033,8 +1022,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/leecode/dfs/完全二叉树的节点个数_222.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="198">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/剑指offer/二叉搜索树与双向链表_36.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
