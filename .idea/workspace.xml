@@ -100,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/剑指offer/二叉搜索树与双向链表_36.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+            <state relative-caret-position="990">
+              <caret line="45" column="5" selection-start-line="30" selection-start-column="4" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="e#198#199#0" expanded="true" />
                 <element signature="e#232#233#0" expanded="true" />
@@ -549,11 +549,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1597289000" />
+    <option name="totallyTimeSpent" value="1597532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1792" height="1120" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.21142857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1029,8 +1028,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/剑指offer/二叉搜索树与双向链表_36.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        <state relative-caret-position="990">
+          <caret line="45" column="5" selection-start-line="30" selection-start-column="4" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="e#198#199#0" expanded="true" />
             <element signature="e#232#233#0" expanded="true" />
