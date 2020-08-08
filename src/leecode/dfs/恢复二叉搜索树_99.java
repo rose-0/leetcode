@@ -25,6 +25,36 @@ public class 恢复二叉搜索树_99 {
         pre=root;//pre记录根节点，不断移动
         reverseNode(root.right);
     }
+    //自己写的
+    TreeNode cur=null;
+    TreeNode[] result=new TreeNode[2];
+    public void recoverTree2(TreeNode root) {
+        findNode(root);
+        int temp=result[0].val;
+        result[0].val=result[1].val;
+        result[1].val=temp;
+    }
+
+    public void findNode(TreeNode root){
+        if(root==null){
+            return;
+        }
+        findNode(root.left);//这个放在前面，记得是中序
+
+        if(cur==null){
+            cur=root;
+        }else {
+            if(cur.val>root.val){
+                result[0]=result[0]==null?cur:result[0];
+                result[1]=root;
+            }
+        }
+        cur=root;
+        findNode(root.right);
+    }
+
+
+
     //非递归 中序 P134
     public void reverseUndp(TreeNode root){
         TreeNode pre=null;
@@ -33,7 +63,7 @@ public class 恢复二叉搜索树_99 {
             Stack<TreeNode>stack=new Stack<>();
             while (!stack.isEmpty()||root!=null){
 
-                if(root!=null){
+                if(root!=null){//不是 if (root.left!=null)
                     stack.push(root);
                     root=root.left;
                 }else {
@@ -42,6 +72,7 @@ public class 恢复二叉搜索树_99 {
                         if(err[0]==null)err[0]=pre;
                         err[1]=root;
                     }
+                    pre=root;
                     root=root.right;
                 }
             }

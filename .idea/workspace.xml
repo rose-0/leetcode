@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="885129ae-21d3-42b8-a1a5-1dac186707a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Demo/META-INF/Demo.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Demo/leecode/Array/SubClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Demo/leecode/Array/最长连续序列_128.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Demo/leecode/Array/最长连续序列_128.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Demo/leecode/Array/逆波兰表达式求值_150.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Demo/leecode/Array/逆波兰表达式求值_150.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Demo/校招2019/拼多多2020/多多的魔术盒子.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Demo/校招2019/拼多多2020/多多的魔术盒子.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/笔试代码/array/旋转数组lee_189.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/笔试代码/array/旋转数组lee_189.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leecode/dfs/恢复二叉搜索树_99.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/leecode/dfs/恢复二叉搜索树_99.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +54,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/笔试代码/array/旋转数组lee_189.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="572">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/leecode/dfs/恢复二叉搜索树_99.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="77" column="9" selection-start-line="59" selection-start-column="8" selection-end-line="77" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -106,7 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>111</find>
       <find>124</find>
       <find>输入</find>
       <find>rightcol</find>
@@ -136,6 +138,7 @@
       <find>92</find>
       <find>150</find>
       <find>189</find>
+      <find>99</find>
     </findStrings>
     <replaceStrings>
       <replace>pre</replace>
@@ -160,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Sort/quick.java" />
         <option value="$PROJECT_DIR$/src/leecode/other/设计循环队列_622.java" />
         <option value="$PROJECT_DIR$/src/leecode/dfs/岛屿的最大面积_695.java" />
         <option value="$PROJECT_DIR$/src/leecode/dfs/二叉树最大路径_打印.java" />
@@ -211,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/leecode/Array/逆波兰表达式求值_150.java" />
         <option value="$PROJECT_DIR$/src/校招2019/回文素数.java" />
         <option value="$PROJECT_DIR$/src/笔试代码/array/旋转数组lee_189.java" />
+        <option value="$PROJECT_DIR$/src/leecode/dfs/恢复二叉搜索树_99.java" />
       </list>
     </option>
   </component>
@@ -508,7 +511,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1592719000" />
+    <option name="totallyTimeSpent" value="1593967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1792" height="1120" extended-state="0" />
@@ -535,7 +538,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.294702" />
       <window_info anchor="bottom" id="Run with VisualVM" order="12" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.19142857" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="14" visible="true" weight="0.19142857" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -630,13 +633,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/zuoshen/输入输出练习/B.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/zuoshen/输入输出练习/A.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -988,8 +984,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/笔试代码/array/旋转数组lee_189.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="572">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/leecode/dfs/恢复二叉搜索树_99.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="77" column="9" selection-start-line="59" selection-start-column="8" selection-end-line="77" selection-end-column="9" />
         </state>
       </provider>
     </entry>
