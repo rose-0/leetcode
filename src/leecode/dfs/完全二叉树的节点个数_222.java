@@ -1,13 +1,13 @@
 package leecode.dfs;
 //https://blog.csdn.net/weixin_43338519/article/details/98084408
 public class 完全二叉树的节点个数_222 {
-    //labuladong的方法
+    //labuladong的方法 p328
     public int countNodesbyla(TreeNode root){
         TreeNode left=root;
         TreeNode right=root;
         int hleft=0;
         int hright=0;
-        while (left!=null){
+        while (left!=null){//高度使用循环去求
             left=left.left;
             hleft++;
         }
@@ -15,9 +15,11 @@ public class 完全二叉树的节点个数_222 {
             right=right.right;
             hright++;
         }
+        //按照完全二叉树计算
         if(hleft==hright){
             return (int)Math.pow(2,hleft)-1;
         }
+        //按照普通二叉树计算节点的个数
         return 1+countNodesbyla(root.left)+countNodesbyla(root.right);
     }
 

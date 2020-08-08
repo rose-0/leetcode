@@ -1,5 +1,6 @@
 package leecode.dfs;
-
+//剑指offer 二叉树镜像
+//https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/solution/mian-shi-ti-27-er-cha-shu-de-jing-xiang-di-gui-fu-/
 public class 翻转二叉树_226 {
     public TreeNode invertTree(TreeNode root) {
         if(root==null){
@@ -20,4 +21,6 @@ public class 翻转二叉树_226 {
         root.left=invertTree(right);
         return root;
     }
+    //非递归
+
 }

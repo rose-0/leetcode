@@ -36,6 +36,22 @@ public class 路径总和II_113 {
         //因为左孩子已经不再路径上面了，所以这儿要有32行
     }
 
+    //感觉这个清楚点
+    public void findpathsum(TreeNode root,int sum,List<Integer>list){
+        if(root==null){
+            return;
+        }
+        int cur=sum-root.val;
+        list.add(root.val);
+
+        if(root.left==null&&root.right==null&&cur==0){
+            res.add(new ArrayList<>(list));//这里不写return也行，因为下面为空自动返回
+        }
+
+        findpathsum(root.left,cur,list);
+        findpathsum(root.right,cur,list);
+        list.remove(list.size()-1);
+    }
 
     List<List<Integer>> res=new ArrayList<>();
     public List<List<Integer>> pathSumErroe(TreeNode root, int sum) {
