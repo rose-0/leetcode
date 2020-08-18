@@ -6,7 +6,7 @@ package 笔试代码.array;
  */
 public class 旋转数组lee_189 {
     public void rotate(int[] nums, int k) {
-        k=k%nums.length;
+        k=k%nums.length;//注意这个
         /*
         反转所有元素
         反转前k个

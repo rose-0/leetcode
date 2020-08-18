@@ -43,6 +43,7 @@ public class 计数二进制子串_696 {
     public void BinarySubstring(String s, int start, int end) {
         char f = s.charAt(start);
         char e = s.charAt(end);
+        //这里卡边界 不是用 left<right
         while(start >= 0 && end < s.length() && s.charAt(start) == f && s.charAt(end) == e) {
             start--;
             end++;

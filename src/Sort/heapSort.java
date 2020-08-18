@@ -6,7 +6,7 @@ public class heapSort {
             return;
         }
         for (int i = 0; i < arr.length; i++) {
-            heapSwim(arr,i);//变成大根堆，堆顶元素最大
+            heapSwim(arr,i);//传的是下标，把i位置元素上浮，变成大根堆，堆顶元素最大
         }
         int end=arr.length-1;//数组元素全部插入后变成堆，此时堆的长度和数组长度相同
 
@@ -53,7 +53,7 @@ public class heapSort {
             left=index*2+1;//记得更新这个！
         }
     }
-    public static void swap(int[]arr,int i,int j){
+    public static void swap(int[]arr,int i,int j){//这里也是传的下标
         int temp=arr[i];
         arr[i]=arr[j];
         arr[j]=temp;

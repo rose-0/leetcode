@@ -42,14 +42,14 @@ public class printABC_1 {
                 for (int i = 0; i <10 ; i++) {
                     while (state%3!=which){
                         try {
-                            lock.wait();
+                            lock.wait();//object的wait方法
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                     System.out.println(which);
                     state++;
-                    lock.notifyAll();
+                    lock.notifyAll();//一定要用all，而不是notify
                 }
             }
         }

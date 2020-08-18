@@ -71,6 +71,8 @@ public class K个一组翻转链表_25 {
             //记录下要翻转链表的头节点
             ListNode start=pre.next;
             //翻转链表,pre.next指向翻转后的链表。1->2 变成2->1。 dummy->2->1
+            // start指向1，反转完后链表的结构变了，但是start还是指向1，而不是2！！
+            //返回值是end节点
             pre.next=reverse_list(start);
             //翻转后头节点变到最后。通过.next把断开的链表重新链接。dummy->2->1  3->4->....
             //连接 1和3
@@ -80,11 +82,11 @@ public class K个一组翻转链表_25 {
             //将pre换成下次要翻转的链表的头结点的上一个节点。即start
             pre=start;
             //翻转结束，将end置为下次要翻转的链表的头结点的上一个节点。即start
-            end=start;
+            end=start;//end又移动k步，end=start和初始化end为dummy保持一致
         }
         return dummy.next;
     }
-    public ListNode reverse_list(ListNode head){//直接改变start！！不要用cur
+    public ListNode reverse_list(ListNode head){//直接改变start！！不要用cur，用cur也是正确的
         ListNode pre=null;
         ListNode next=null;
         while (head!=null){
