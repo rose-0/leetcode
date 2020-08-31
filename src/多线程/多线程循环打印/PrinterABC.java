@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //https://blog.csdn.net/HEYUTAO007/article/details/49889849
 public class PrinterABC implements Runnable{
     private static final int PRINT_COUNT=10;
-    private final ReentrantLock reentrantLock;
+    private final ReentrantLock reentrantLock;//这个不用static
     private final Condition thisCondition;//condition也不能使用static修饰，
     // 如果变成全局性的，则后面覆盖前面，导致前面失效，死锁，不使用final修饰好像也可以
     private  final Condition nextCondition;
@@ -36,7 +36,7 @@ public class PrinterABC implements Runnable{
                 System.out.print(printChar);
                 printChar++;
                 printChar++;
-                nextCondition.signal(); //下一个打印唤醒
+                nextCondition.signal(); //下一个打印唤醒，先唤醒，再await
                 if(i<PRINT_COUNT-1){//i=PRINT_COUNT-1时候，说明是最后一次了，不需要wait，
                     // 如果最后一次wait的话，因为没有线程执行了。所以一直死锁，非最后一次就要wait
                     thisCondition.await();

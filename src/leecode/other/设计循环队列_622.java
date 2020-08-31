@@ -20,7 +20,7 @@ public class 设计循环队列_622 {
             if(size==arr.length){
                 return false;
             }
-            arr[end]=value;
+            arr[end]=value;//先赋值，再更新，因为 end指向就是空的
             size++;//更新size！！
             end=end==arr.length-1?0:end+1;
             return true;
@@ -33,7 +33,7 @@ public class 设计循环队列_622 {
             }
             //不删数，只移动下标，改变指针即可
             front=front==arr.length-1?0:front+1;
-            size--;
+            size--;//记得更新这个
             return true;
         }
 

@@ -19,12 +19,13 @@ public class 翻转字符串里的单词_151 {
         String str1=new String(chars);
         StringBuilder str2=new StringBuilder();
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] != ' ') {
+            if (chars[i] != ' ') {   //不要忘记这里！！
                 l = i == 0 || chars[i - 1] == ' ' ? i : l;
                 r = i == chars.length - 1 || chars[i + 1] == ' ' ? i : r;
             }
             if (l != -1 && r != -1) {
                 reverse(chars, l, r);
+                //在这里加
                 while (l<=r){
                     str2.append(chars[l++]);
                 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 //对比数组累加和为aim 数组选择数累加为aim
 //这个其实也可以作为二维dp，和左神换钱的最少货币数一样！！p191
+//可以参考 换钱的最少货币数_任意张method_dp2 都多一行一列
 public class 零钱兑换_322 {
     static int res=Integer.MAX_VALUE;
     public static int coinChange(int[] coins, int amount) {

@@ -47,7 +47,7 @@ public class ProducerConsumerByLock {
                 while (queue.size()==maxSize){
                     System.out.println("队列满了，生产者 "+ name +" 等待");
                     try {
-                        fullCondition.await();
+                        fullCondition.await();//满了，等待
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

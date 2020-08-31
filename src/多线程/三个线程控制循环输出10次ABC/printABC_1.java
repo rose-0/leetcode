@@ -7,31 +7,32 @@ public class printABC_1 {
     public static class MyThread extends Thread{
         int which;//which代表线程0？1？2？
         static volatile int state;//静态初始值为0
-        static final Object t=new Object();//这个用来当做锁
+        static final Object lock=new Object();//这个用来当做锁
         public MyThread(int which){
             this.which=which;
         }
         @Override//刚开始state为0，
         public void run(){
             for (int i = 0; i <10 ; i++) {
-                synchronized (t) {
+                synchronized (lock) {
                     while (state % 3 != which) {//state为0时，如果是线程0，不进入循环，线程1则进入
                         try {//循环，这个线程进入循环后等待，释放锁，这样才可能使得线程0获得锁
-                            t.wait();
+                            lock.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                     System.out.println(which);
                     state++;
-                    t.notifyAll();
+                    lock.notifyAll();
                 }
             }
         }
     }
     public static class mythread_1 extends Thread{
-        static final Object lock=new Object(); //static保证三个对象使用的是一个锁
         int which;
+        //这两个 static 不能少！！！！
+        static final Object lock=new Object(); //static保证三个对象使用的是一个锁
         static volatile int state=1; //static保证改变的都是一个值，volatile保证改变可见
         public mythread_1(int which){
             this.which=which;

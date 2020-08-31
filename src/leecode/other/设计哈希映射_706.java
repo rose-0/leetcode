@@ -17,10 +17,12 @@ public class 设计哈希映射_706 {
         data=new Node[size];
     }
 
+    //put 、 remove 删除和更新都是用的pre去遍历，get查找用的cur遍历，其实好像无所谓？,
+    // 删除一定要用前一个！！更新最后跳出来要赋值next节点，也要用pre
     public void put(int key,int value){
         int hash=hash(key);
         if(data[hash]==null){
-            data[hash]=new Node(-1,-1);
+            data[hash]=new Node(-1,-1);//注意这个
             data[hash].next=new Node(key,value);
         }else {
             Node pre=data[hash];//从头节点遍历
@@ -31,7 +33,7 @@ public class 设计哈希映射_706 {
                 }
                 pre=pre.next;
             }
-            pre.next=new Node(key,value);//没有，则添加
+            pre.next=new Node(key,value);//没有，则添加,记住这个
         }
     }
 
