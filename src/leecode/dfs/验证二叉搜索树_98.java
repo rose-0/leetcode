@@ -24,18 +24,19 @@ public class 验证二叉搜索树_98 {
         }
         return true;
     }
-    int pre=0;
+    TreeNode pre=null;
     public boolean method(TreeNode root){
         if(root==null){
             return true;
         }
         if(method(root.left)){
-            if(pre<root.val){
-                pre=root.val;
-                return method(root.right);
-            }else {
-                return false;
+            if(pre!=null){
+                if(pre.val>root.val){
+                    return false;
+                }
             }
+            pre=root;
+            return method(root.right);
         }else {
             return false;
         }
