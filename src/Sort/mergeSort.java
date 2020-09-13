@@ -9,7 +9,7 @@ mergeSort(arr,l,mid);//这里是mid，不是mid-1！！！mergeSort(arr,l,mid-1)
 mergeSort(arr,mid+1,r);
 最后再调用merge合并两个数组
  */
-//归并排序 图解
+//归并排序 图解 https://www.cnblogs.com/chengxiao/p/6194356.html
 public class mergeSort {
     public void mergeSort(int[]arr,int l,int r){
         if(l==r){//注意临界条件,和快排不同,l==r剩一个数不需要递归
