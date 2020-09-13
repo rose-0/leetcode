@@ -6,24 +6,20 @@ import java.util.HashMap;
 
 public class 环形链表II_142 {
     public ListNode detectCycle(ListNode head) {
-        ListNode slow=head;
-        ListNode fast=head;
-        while (fast!=null&&fast.next!=null){
+        ListNode slow,fast;
+        slow=fast=head;
+        while(fast!=null&&fast.next!=null){//有环的话，是挑不出循环的
             fast=fast.next.next;
             slow=slow.next;
-            if(fast==slow){
-                break;
+            if(fast==slow){ //有环的话，一定是会相交的！
+                slow=head;
+                while(fast!=slow){
+                    fast=fast.next;
+                    slow=slow.next;
+                }
+                return fast;
             }
         }
-        HashMap<Integer,Character>map=new HashMap<>();
-        if(fast==null||fast.next==null){
-            return null;
-        }
-        slow=head;
-        while (fast!=slow){
-            slow=slow.next;
-            fast=fast.next;
-        }
-        return slow;
+        return null;
     }
 }

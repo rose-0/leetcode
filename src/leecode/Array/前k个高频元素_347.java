@@ -8,7 +8,7 @@ public class 前k个高频元素_347 {
             for (int i = 0; i <nums.length ; i++) {
                 map.put(nums[i],map.getOrDefault(nums[i],0)+1);
             }
-            PriorityQueue<Integer> queue=new PriorityQueue<>( new Comparator<Integer>() {
+            PriorityQueue<Integer> queue=new PriorityQueue<>( new Comparator<Integer>() {//如果在这里指定了容量为k不是固定的，会自动扩容
                 @Override
                 public int compare(Integer o1, Integer o2) {
                     return map.get(o1)-map.get(o2);//注意这里！！，比较频率，最小堆，堆里面放的是数，按照各自频率排序

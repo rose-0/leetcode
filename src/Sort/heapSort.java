@@ -26,19 +26,21 @@ public class heapSort {
               1   2
           2的根节点是0，（2-1）/2
          */
-        while (arr[index]>arr[(index-1)/2]){//头结点(index-1)/2  子节点>头节点 上浮
+        int parentIndex=(index-1)/2;
+        while (arr[index]>arr[parentIndex]){//头结点(index-1)/2  子节点>头节点 上浮
             //传入的index是0的时候，(-1)/2=0;
-            swap(arr,index,(index-1)/2);//交换的时候，传入的参数是下标；
-            index=(index-1)/2;
+            swap(arr,index,parentIndex);//交换的时候，传入的参数是下标；
+            index=parentIndex;
+            parentIndex=(index-1)/2;
         }
     }
-    public static void heapsink(int[]arr,int index,int size){//heapify  这个size是堆的size，而不是数组的长度
+    public static void heapsink(int[]arr,int index,int end){//heapify  这个end是堆的end，代表堆的分界线,而不是数组的长度
         //下沉操作：
         int left=index*2+1;
-        while (left<size){
+        while (left<end){
             //largest找到子节点哪个大
             int largest=left;
-            if(left+1<size){//存在右孩子
+            if(left+1<end){//存在右孩子
                 largest=arr[left+1]>arr[left]?left+1:left;
             }
 

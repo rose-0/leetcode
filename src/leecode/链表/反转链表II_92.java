@@ -59,6 +59,9 @@ public class 反转链表II_92 {
          */
         ListNode reverHead=pre.next;
 
+        /*
+        要记录两个 pre 和 reverseHead
+         */
 
         for(int i=m;i<n;i++){
             /*
