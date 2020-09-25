@@ -30,4 +30,45 @@ public class 搜索旋转排序数组II_81 {
         }
         return false;
     }
+    //liweiwei  二分 在数组中查找符合条件的元素的下标 对比33
+    //这个是数组中会存在重复元素，33是不存在重复元素
+    //https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/er-fen-cha-zhao-by-liweiwei1419/
+    public boolean search2(int[] nums, int target) {
+        if(nums.length==0){
+            return false;
+        }
+        int left=0;
+        int right=nums.length-1;
+        while (left<right){
+            int mid=(left+right)>>>1;
+            if(nums[left]<nums[mid]){//存在重复元素，所以这里不能使用nums[left]<=nums[mid]了
+                //前半部分有序
+                if(nums[left]<=target&&target<=nums[mid]){
+                    //[left,mid]
+                    right=mid;
+                }else {
+                    //[mid+1,right]
+                    left=mid+1;
+                }
+            }else if(nums[left]>nums[mid]){
+                //前半部分无序
+                //nums[left]>nums[mid]
+                if(nums[mid]<=target&&target<=nums[right]){
+                    left=mid;
+                }else {
+                    right=mid-1;
+                }
+            }else {
+                // nums[left]==nums[mid]
+                if(nums[left]==target){
+                    return true;
+                }
+                left=left+1;
+            }
+        }
+        if(nums[left]==target){
+            return true;
+        }
+        return false;
+    }
 }

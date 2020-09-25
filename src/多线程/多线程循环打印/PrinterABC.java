@@ -59,6 +59,7 @@ public class PrinterABC implements Runnable{
         Thread printa=new Thread(new PrinterABC(lock,a,b,'1'));
         Thread printb=new Thread(new PrinterABC(lock,b,a,'2'));
 //        Thread printc=new Thread(new PrinterABC(lock,c,a,'c'));
+        //start（）不能保证先后顺序，要使用join方法！！
         printa.start();//如果改成run方法是不可以的！！见startVsrun
 //        Thread.sleep(100);
         printb.start();

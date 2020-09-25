@@ -21,6 +21,43 @@ public class 寻找旋转排序树组的最小值_153 {
         return -1;
     }
 
+    //liweiwei 二分 在数组中查找符合条件的元素的下标
+    public int findMin2(int[] nums) {
+        int left=0;
+        int right=nums.length-1;
+        while (left<right){
+            int mid=(left+right)>>>2;//>>>1 不是 >>>2  !!!
+            //找统一的判断方法，需要自己推论
+            //https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-fa-fen-zhi-fa-python-dai-ma-java-dai-ma-by-/
+            //统一规律
+            /*
+            1 2 3 4 5
+            列出如下情况：移动1的开始位置
+
+            1 2 3 4 5
+            5 1 2 3 4
+            4 5 1 2 3
+            3 4 5 1 2
+            2 3 4 5 1
+
+            中间>左边 min可能在左边或者右边
+            中间<左边 [left,mid]
+            中间>右边 [mid+1,right] //中间数左边的数（包括中间数）都不是「旋转排序数组」的最小值
+            中间<右边 [left,mid] //中间数到右边界是递增的，所以中间的右边一定不是
+
+            所以对于两个if分支，选择中间位置和右边比较
+
+             */
+            if(nums[mid]<=nums[right]){
+                //[left,mid]局部有序
+                right=mid;
+            }else {
+                left=mid+1;
+            }
+        }
+        return nums[left];
+    }
+
     public static void main(String[] args) {
         int[]arr={4,5,6,7,1,2,3};
         List<Integer>list=new ArrayList<>();
