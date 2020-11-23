@@ -90,11 +90,10 @@ public class 岛屿的最大面积_695 {
         boolean[][]visit=new boolean[grid.length][grid[0].length];
         for (int i = 0; i <grid.length ; i++) {
             for (int j = 0; j <grid[0].length ; j++) {
-                if(grid[i][j]==1){
-                    int temp=maxAreaOfIslandwithdfs(grid,0,0,visit);
+                if(grid[i][j]==1&&!visit[i][j]){//dfs里没有先对visit进行判断，所以这里加上，如果先判断（dfs2函数），则不用加
+                    int temp=maxAreaOfIslandwithdfs(grid,i,j,visit);
 //                    System.out.println("i="+i+"j="+j+"temp="+temp);
-                    max=Math.max(max,temp);
-//                    return -1;
+                    max=Math.max(max,temp);//max一定要写到if里面
                 }
             }
         }
@@ -110,27 +109,40 @@ public class 岛屿的最大面积_695 {
 
     maxAreaOfIslandwithdfs2可以看下不传引用怎么改变值
      */
-        public static int maxAreaOfIslandwithdfs(int[][]grid,int i,int j,boolean[][]visit){
-        if(grid[i][j]==0||visit[i][j]){
+    public static int maxAreaOfIslandwithdfs(int[][] grid, int i, int j, boolean[][] visit) {
+        visit[i][j] = true;
+        int count = 1;//设为1.如果设为0永远是0
+        for (int[] dir : dirs) {
+            int x = i + dir[0];
+            int y = j + dir[1];
+            if (bound(x, y, grid)&&grid[x][y]==1&&!visit[x][y]) {//dfs指针移动到下一个点时，满足不越界，为1(说明有边)，未dfs过
+                int temp = maxAreaOfIslandwithdfs(grid, x, y, visit);
+                System.out.println("x=" + x + "y=" + y + "temp=" + temp);
+                count = count + temp;
+            }
+        }
+//        visit[i][j]=false; //加上这个就不对
+        return count;
+    }
+
+    public int dfs2(int[][] grid,int i,int j,boolean[][]visit){
+        //将visit[i][j]条件移到这里也可以，注意return 0
+        if(visit[i][j]==true){
             return 0;
         }
         visit[i][j]=true;
-        int num=1;//设为1.如果设为0永远是0
-        for(int[]dir:dirs){
-            int x=i+dir[0];
-            int y=j+dir[1];
-            if(bound(x,y,grid)){
-                int temp=maxAreaOfIslandwithdfs(grid,x,y,visit);
-//                if(i==0&&j==0) {
-                    System.out.println("x=" + x + "y=" + y + "temp=" + temp);
-//                }
-                num=num+temp;
-//                System.out.println(num);
+        int count=1;
+        for (int k = 0; k <4 ; k++) {
+            int x=i+dirs[k][0];
+            int y=j+dirs[k][1];
+            if(bound(x,y,grid)&&grid[x][y]==1){
+                count=count+dfs2(grid,x,y,visit);
             }
         }
-//        visit[i][j]=false;
-        return num;
+        return count;
     }
+
+    //直接传入count不太容易理解
     public static int maxAreaOfIslandwithdfs2(int[][]grid,int i,int j,boolean[][]visit,int count) {
         if(!bound(i,j,grid)||visit[i][j]||grid[i][j]==0){
             return count;

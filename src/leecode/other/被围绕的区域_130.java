@@ -22,6 +22,11 @@ public class 被围绕的区域_130 {
             }
         }
     }
+    /*
+    这个dfs函数应该不对
+    1、直接找区域，而不是反向,直接找不好操作
+    2、其实不需要visit数组，因为这个可以直接改变原来数组的值，使用visit是不改变原来数组时进行的标记
+     */
     public static boolean dfs(char[][]board,int i,int j,boolean[][]visit){
         if(board[i][j]=='X'){
             return false;
@@ -34,7 +39,7 @@ public class 被围绕的区域_130 {
         for (int k = 0; k <4 ; k++) {
             int x=i+dir[k][0];
             int y=j+dir[k][1];
-            if(bound1(board,x,y)&&!visit[x][y]&&board[x][y]=='O'){
+            if(bound(board,x,y)&&!visit[x][y]&&board[x][y]=='O'){
                 if(dfs(board,x,y,visit)){
                     /*visit[i][j]标志要不要还原为默认值的问题，这个题目也是对每个点都要进行dfs，不是说只对一个点dfs
                     在这个点结束dfs之后，如果visit标志没有还原为原来的false，则下一个点进行dfs的时候就不能走这个点了
@@ -50,12 +55,6 @@ public class 被围绕的区域_130 {
         return false;
     }
     public static boolean bound(char[][]board,int i,int j){
-        if(i==0||i==board.length-1||j==0||j==board[0].length-1){
-            return true;
-        }
-        return false;
-    }
-    public static boolean bound1(char[][]board,int i,int j){
         if(i<0||i>board.length-1||j<0||j>board[0].length-1){
             return false;
         }
@@ -63,19 +62,25 @@ public class 被围绕的区域_130 {
     }
 
 
-    //这个题目关键是边界上O相通的O不能够变成X，所以要先把这些O找出来变成b，再把符合条件的o变成x，最后b变成o
+    /*
+    如果把 X 看作海水，把 O 看作陆地，被海水包围的区域就是岛屿。没被海水包围的陆地，与边界有连通，不是岛屿。
+    判断是否为岛屿比较困难，但找出非岛屿比较简单——凡是与边界有联系的 O，找出并标记
+
+    这个题目关键是边界上O相通的O不能够变成X，所以要先把这些O找出来变成b，再把符合条件的o变成x，最后b变成o
+     */
     int[][]dirs={{1,0},{-1,0},{0,1},{0,-1}};
+    //https://leetcode-cn.com/problems/surrounded-regions/solution/dfs-bfs-bing-cha-ji-by-powcai/
     public void solvewithdfs(char[][]boards){
         int row=boards.length;
         int col=boards[0].length;
         for (int i = 0; i <col ; i++) {
             //第一行 找边界o连通的o
             if(boards[0][i]=='O'){
-                dfsmethod(0,i,boards,row,col);//或者调用dfsmethod
+                dfsmethod(0,i,boards,row,col);//或者调用bfsmethod
             }
             //最后一行
-            if(boards[i][0]=='O'){
-                dfsmethod(row-1,i,boards,row,col);//或者调用dfsmethod
+            if(boards[row-1][i]=='O'){
+                dfsmethod(row-1,i,boards,row,col);//或者调用bfsmethod
             }
         }
         for (int i = 0; i <row ; i++) {
@@ -104,11 +109,14 @@ public class 被围绕的区域_130 {
         for (int[] dir:dirs) {
             int next_x = i+dir[0];
             int next_y = j+dir[1];
-            if(next_x<0||next_x>=row||next_y<0||next_y>=col||board[next_x][next_y]!='O'){
-                continue;
+            if(isInArea(board,next_x,next_y)&&board[next_x][next_y]=='O'){
+                dfsmethod(next_x,next_y,board,row,col);
             }
-            dfsmethod(next_x,next_y,board,row,col);
         }
+    }
+
+    public boolean isInArea(char[][]board,int x,int y){
+        return x>=0&&x<board.length&&y>=0&&y<board[0].length;
     }
 
     class point{
@@ -122,10 +130,11 @@ public class 被围绕的区域_130 {
 
     public void bfsmethod(int i,int j,char[][]board,int row,int col){
         Deque<point>deque=new LinkedList<>();
+        //bfs将二维坐标转化为一维，或者直接使用point对象这种方式进行！！都是两种方式
         deque.offer(new point(i,j));
         while (!deque.isEmpty()){
             point cur=deque.poll();
-            if(cur.x>=0&&cur.x<row&&cur.y>=0&&cur.y<col&&board[cur.x][cur.y]=='O'){
+            if(isInArea(board,cur.x,cur.y)&&board[cur.x][cur.y]=='O'){
                 board[cur.x][cur.y]='B';
                 for (int[]dir:dirs) {
                     deque.offer(new point(cur.x+dir[0],cur.y+dir[1]));

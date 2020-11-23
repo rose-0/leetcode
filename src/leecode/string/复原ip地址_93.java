@@ -1,10 +1,8 @@
 package leecode.string;
 
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+
 //英文版leecode 第一个答案下面的评论 davidluoyes的解法
 //每一步是要判断每一段由几位数组成，1?2?3?进行回溯
 public class 复原ip地址_93 {
@@ -101,6 +99,77 @@ public class 复原ip地址_93 {
     }
 
 
+    /*
+    liweiwei 这个比较好理解
+    画树形图 一共有4段ip 每段ip是 1个数字或2个或3个数
+    所以画树形图时，分支就是 1个数字或2个或3个数
+    再分析剪枝的条件
+    //https://leetcode-cn.com/problems/restore-ip-addresses/solution/hui-su-suan-fa-hua-tu-fen-xi-jian-zhi-tiao-jian-by/
+     */
+    public List<String> restoreIpAddresses2(String s) {
+        int len = s.length();
+        List<String> res = new ArrayList<>();
+        // 如果长度不够，不搜索
+        if (len < 4 || len > 12) {
+            return res;
+        }
+
+        Deque<String> path = new ArrayDeque<>(4);
+        dfs(res,0,0,s,path);
+        return res;
+    }
+    public void dfs(List<String> res,int begin,int splitTimes,String s,Deque<String>path){
+        if (begin == s.length()) {
+            if (splitTimes == 4) {
+                res.add(String.join(".", path));// path队列中的string以.的形式分隔组成一个string
+            }
+            return;
+        }
+        //s.length()-begin表示剩余还未分割的字符串的位数
+//        if(s.length()-begin<(4-splitTimes)||s.length()-begin>3*(4-splitTimes)){
+//            return;
+//        }
+        for (int i = begin; i <begin+3 ; i++) {
+            if (i >= s.length()) {
+                break;
+            }
+            if (3 * (4 - splitTimes) < s.length() - i) {
+                continue;
+            }
+            /*
+            i=0开始
+            if(begin+i>=s.length()){
+                break;
+            }
+             */
+            if(judgeIfIpSegment(s,begin,begin+i)){
+                String curIp=s.substring(begin,i+1);
+                path.addLast(curIp);
+//                path.addLast(ipSegment+"");// +"" 是将int转化为string
+//                dfs(res,begin+i+1,splitTimes+1,s,path);
+                dfs(res,i+1,splitTimes+1,s,path);
+                path.pollLast();
+            }
+
+        }
+    }
+
+    public boolean judgeIfIpSegment(String s, int left, int right) {
+        int len = right - left + 1;
+        //大于 1 位的时候，不能以 0 开头
+        if (len > 1 && s.charAt(left) == '0') {
+            return false;
+        }
+        //转为int
+        int res = 0;
+        for (int i = left; i <= right; i++) {
+            res = res * 10 + s.charAt(i) - '0';
+        }
+        if (res <= 255 && res>=0) {
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         String str="25525511135";

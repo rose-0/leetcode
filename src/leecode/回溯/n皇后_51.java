@@ -70,6 +70,7 @@ public class n皇后_51 {
     public static boolean isValid(char[][]board,int row,int col){
         int rows=board.length;
         // check is valid in col，不同行相同列是否有相同的Q
+        //上面单层循环 都只会选择同一行的一个元素 所以不需要对行进行检查
         for (int i = 0; i <board[0].length ; i++) {
             if(board[i][col]=='Q'){
                 return false;
@@ -91,6 +92,10 @@ public class n皇后_51 {
         return true;
     }
 
+    /*
+    liweiwei https://leetcode-cn.com/problems/n-queens/solution/gen-ju-di-46-ti-quan-pai-lie-de-hui-su-suan-fa-si-/
+    可以像全排列那样 为列、主对角线、副对角线 设置标记数组来判断位置合不合法
+     */
     public static void main(String[] args) {
         solveNQueens(3);
     }
