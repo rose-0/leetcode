@@ -37,4 +37,19 @@ public class x的平方根_69 {
         }
         return mid;
     }
+    //liweiwei
+    public int mySqrt(int x) {
+        // left、right、mid都要是long 否则不正确 针对大整型测试用例通不过，因此变量需要声明为 long 类型
+        long left=0;
+        long right=x/2+1;//否则会超出时间限制
+        while (left<right){
+            long mid=(left+right+1)/2;
+            if(mid*mid>x){
+                right=mid-1;
+            }else {
+                left=mid;
+            }
+        }
+        return (int) left;
+    }
 }

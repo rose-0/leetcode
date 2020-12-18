@@ -39,7 +39,7 @@ public class 打家劫舍_198 {
     }
     //dp 自底向上，这个题先算后面，再算前面
     public static int rob_dp(int[]nums,int start){
-        int[]dp=new int[nums.length+2];//dp[i]=x 表示从第i间房子开始，最多可以抢到的钱为x
+        int[]dp=new int[nums.length+2];//dp[i]=x 表示从第i间房子开始 [i,end]最多可以抢到的钱为x 牢记dp的定义
         //状态方程：dp[i]= Math.max{dp[i+1],dp[i+2]+nums[i]} 对于i选择抢或不抢
         // dp[nums.length-1]=Math.max{dp[nums.length],dp[nums.length+1]+nums[nums.length-1]}
         // 保证不越界 使得长度为nums.length+2

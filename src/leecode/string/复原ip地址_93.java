@@ -125,29 +125,24 @@ public class 复原ip地址_93 {
             }
             return;
         }
-        //s.length()-begin表示剩余还未分割的字符串的位数
-//        if(s.length()-begin<(4-splitTimes)||s.length()-begin>3*(4-splitTimes)){
-//            return;
-//        }
-        for (int i = begin; i <begin+3 ; i++) {
-            if (i >= s.length()) {
+        //剪枝操作 不然会超时 s.length()-begin不需要加1 是因为begin是下标 从0开始 表示剩余还未分割的字符串的位数 剪枝不能放在for循环里面
+        if(s.length()-begin<(4-splitTimes)||s.length()-begin>3*(4-splitTimes)){
+            return;
+        }
+        //每个节点产生3个分支 所以循环三次
+        for (int i = 0; i <3 ; i++) {
+            //begin+i就是这个子串的结尾 注意是>= 不要忘记 =
+            if (begin+i >= s.length()) {
                 break;
             }
-            if (3 * (4 - splitTimes) < s.length() - i) {
-                continue;
-            }
-            /*
-            i=0开始
-            if(begin+i>=s.length()){
-                break;
-            }
-             */
-            if(judgeIfIpSegment(s,begin,begin+i)){
-                String curIp=s.substring(begin,i+1);
+
+            if(judgeIfIpSegment(s,begin,begin+i)){//判断是否有效
+
+                String curIp=s.substring(begin,begin+i+1);
                 path.addLast(curIp);
 //                path.addLast(ipSegment+"");// +"" 是将int转化为string
 //                dfs(res,begin+i+1,splitTimes+1,s,path);
-                dfs(res,i+1,splitTimes+1,s,path);
+                dfs(res,begin+i+1,splitTimes+1,s,path);
                 path.pollLast();
             }
 

@@ -50,7 +50,17 @@ public class 搜索旋转排序数组II_81 {
                     //[mid+1,right]
                     left=mid+1;
                 }
-            }else if(nums[left]>nums[mid]){
+            }
+            else if(nums[mid]<nums[right]){//后半部分有序
+
+                if(nums[mid+1]<=target&&target<=nums[right]){
+                    left=mid+1;//这样写好一些 使用左中位数时候 一定要保证左边界收缩
+                }else {
+                    right=mid;
+                }
+            }
+            /*
+            else if(nums[left]>nums[mid]){
                 //前半部分无序
                 //nums[left]>nums[mid]
                 if(nums[mid]<=target&&target<=nums[right]){
@@ -58,7 +68,9 @@ public class 搜索旋转排序数组II_81 {
                 }else {
                     right=mid-1;
                 }
-            }else {
+            }
+            */
+            else {
                 // nums[left]==nums[mid]
                 if(nums[left]==target){
                     return true;

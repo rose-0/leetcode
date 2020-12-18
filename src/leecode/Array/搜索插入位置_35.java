@@ -8,7 +8,7 @@ public class 搜索插入位置_35 {
         //特殊
         ////将right初始化为len，就不需要判断特例
         if(nums[nums.length-1]<target){
-            return nums.length-1;
+            return nums.length;
         }
         while (left<right){
             int mid=left+(right-left)/2;
