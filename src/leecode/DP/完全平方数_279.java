@@ -20,7 +20,7 @@ public class 完全平方数_279 {
 
             }
         }
-
+        /*
         int[][] dp = new int[n + 1][m + 1];
         for (int i = 1; i < dp.length; i++) {
             for (int j = 0; j < dp[0].length; j++) {
@@ -33,6 +33,9 @@ public class 完全平方数_279 {
             }
         }
         return dp[dp.length - 1][dp[0].length - 1];
+
+         */
+        return 0;
     }
     /*
     https://leetcode-cn.com/problems/perfect-squares/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--51/
