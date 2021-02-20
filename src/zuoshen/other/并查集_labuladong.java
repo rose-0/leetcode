@@ -61,12 +61,13 @@ public class 并查集_labuladong {
             parent[stack.pop()]=father;
         }
          */
-        while (parent[x]!=x){//最顶层的节点的父指针都指向自己
+        while (parent[x]!=x){//说明parent[x]上面还有节点 因为最顶层的节点的父指针都指向自己
             //路径压缩
             parent[x]=parent[parent[x]];//parent[x]即x的父节点赋值为x的祖父节点，此时路径已经压缩了
             // x的父节点不断向上，可以看公众号gif
             x=parent[x];//x上移
         }
         return x;
+//        return fa[x] == x ? x : fa[x] = findset(fa[x]);
     }
 }

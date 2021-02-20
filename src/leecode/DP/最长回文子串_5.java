@@ -47,6 +47,7 @@ public class 最长回文子串_5 {
             r++;
         }
         System.out.println("l:"+l+"r:"+r);
+        //推出循环前 执行了 l-- r++
         return s.substring(l+1,r);//包括起始，不包括结束，看着不太对
     }
 

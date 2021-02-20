@@ -13,6 +13,7 @@ public class 最小覆盖子串_76 {
 String s,t;
 //在s中寻找t的最小覆盖字串
 String res =s;
+//right是初始化为0，不是长度减一，while 条件是 right<s.size 不是 left<right
 while(right<s.size()){
     windows.add(s[right]);
     right++;

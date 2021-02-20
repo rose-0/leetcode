@@ -27,5 +27,13 @@ public class liweiwei训练题目 {
 
     从0开始刷leecode
     https://leetcode-cn.com/circle/article/48kq9d/
+    
+    在并查集的基础上加一些辅助变量的练习题目
+    https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/solution/wang-luo-lian-jie-bing-cha-ji-by-yexiso-1nd4/
+    
+    
+    DFS + 二分查找 最大值最小值问题 极大极小化
+    模板题: https://leetcode-cn.com/problems/path-with-minimum-effort/solution/dfs-er-fen-cha-zhao-mo-ban-ti-by-kobe24o/
+
      */
 }
